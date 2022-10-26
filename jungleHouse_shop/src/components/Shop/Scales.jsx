@@ -3,12 +3,12 @@ import {showDetails} from "./Scales.js";
 
 export const CareScale = ({name, scaleValue, careType}) =>{
     const ranges = [1,2,3,4];
-    const scaleType = careType === 'light' ? '☀️' : '💧'
+    const scaleType = careType === 'light' ? './src/assets/images/sun(1).png' : './src/assets/images/droplet(1).png'
 
-    return(<div onClick={() => showDetails(name, careType, scaleValue)}>
+    return(<div className="flex flex-row" onClick={() => showDetails(name, careType, scaleValue)}>
         {
             ranges.map((range)=>
-            scaleValue >= range ? <span key={range.toString()}>{scaleType}</span> : null
+            scaleValue >= range ? <img className="py-1 h-6 w-4" src={scaleType} key={range.toString()}/> : null
         )}
         </div>
     )

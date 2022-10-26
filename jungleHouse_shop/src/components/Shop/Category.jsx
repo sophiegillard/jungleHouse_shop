@@ -7,7 +7,7 @@ export const Category = () =>{
         []
     );
 
-    return (<div className="p-7 flex justify-center">
+    return (<div className="p-7 pt-24 flex justify-center">
 
         <label className="sr-only" htmlFor="plant-category">Choose a category:</label>
         <select className="block py-2.5 px-0 text-sm text-gray-500 bg-transparent

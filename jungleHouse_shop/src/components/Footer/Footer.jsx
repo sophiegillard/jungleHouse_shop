@@ -6,7 +6,7 @@ export const Footer = () =>{
     const isValidEmail = email.includes('@')
     const test = () =>{!isValidEmail? alert('Please enter a valid email @') : null};
 
-    return <div className="text-center m-8">
+    return <div className="text-center mt-10 p-8 bg-green-logo-very-light">
     <p>Pour les passionné·e·s de plantes 🌿🌱🌵</p>
         <form className="flex flex-col pt-2 self-center">
             <label>Laissez-nous votre mail :</label>
@@ -16,7 +16,7 @@ export const Footer = () =>{
                    onBlur= {()=>test()}
                    required
                    className="self-center
-                            w-1/3 px-3 py-1.5 my-3
+                            md:w-1/3 px-3 py-1.5 my-3
                             text-gray-700
                             border border-solid border-gray-300
                             rounded transition ease-in-out
