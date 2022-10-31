@@ -1,26 +1,26 @@
-import {BannerCart} from "./Header/BannerCart.jsx";
-import {Cart} from "./Cart/Cart.jsx";
-import {ShoppingList} from "./Shop/ShoppingList.jsx";
-import {Category} from "./Shop/Category.jsx";
-import {Footer} from "./Footer/Footer.jsx"
+import { Routes, Route } from "react-router-dom";
+import Plantes from "../pages/Plantes.jsx";
+import Home from "../pages/Home.jsx";
 import {useEffect, useState} from "react";
+import {Cart} from "./Cart/Cart.jsx";
 
 function App() {
     const initialCart = JSON.parse(window.localStorage.getItem('cart'))
     const [cart, updateCart] = useState(initialCart);
 
     useEffect(() => {
-        window.localStorage.setItem('cart', JSON.stringify(cart))
+            window.localStorage.setItem('cart', JSON.stringify(cart))
         },[cart]
     )
 
-    return <div className="relative z-0">
-            <Cart cart={cart} updateCart={updateCart} />
-        <main>
-            <ShoppingList cart={cart} updateCart={updateCart}/>
-            <Footer />
-        </main>
-    </div>
-}
+    return (
+    <>
+        <Cart cart={cart} updateCart={updateCart} />
+    <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/plantes" element={<Plantes />} />
+    </Routes>
+    </>
+)}
 
 export default App

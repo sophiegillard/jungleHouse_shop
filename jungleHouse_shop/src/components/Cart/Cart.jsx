@@ -5,6 +5,7 @@ import attention from "../../assets/images/attention.png";
 import cartImg from '../../assets/images/shopping-cart.png';
 import deleteIcon from '../../assets/images/delete.png';
 import {NumberButton} from "./NumberButton.jsx";
+import {Link} from "react-router-dom";
 
 export const Cart = ({cart, updateCart}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +45,10 @@ export const Cart = ({cart, updateCart}) => {
     return isOpen? (<div className="fixed top-0 left-0 right-0 z-20">
             <div className=" top-0 left-0 right-0 z-20  flex flex-row bg-green-logo-very-light justify-between p-6 md:p-7">
                 <div className="flex flex-row md:gap-5">
+                    <Link className="flex flex-row md:gap-5" to={"/"}>
                     <img src={logo} alt="logo" className="h-10"/>
                     <h1 className="text-2xl font-bold">Jungle House</h1>
+                    </Link>
                 </div>
                 <img className="relative h-10 cursor-pointer" src={cartImg} onClick={()=>setIsOpen(false)}/>
                 {cart.length > 0 ? <span className="absolute right-12 bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
@@ -160,8 +163,10 @@ export const Cart = ({cart, updateCart}) => {
 
         (<div className="fixed top-0 left-0 right-0 z-20  flex flex-row bg-green-logo-very-light justify-between p-6 md:p-7">
                 <div className="flex flex-row md:gap-5">
-                    <img src={logo} alt="logo" className="h-10"/>
-                    <h1 className="text-2xl font-bold">Jungle House</h1>
+                    <Link className="flex flex-row md:gap-5" to={"/"}>
+                        <img src={logo} alt="logo" className="h-10"/>
+                        <h1 className="text-2xl font-bold">Jungle House</h1>
+                    </Link>
                 </div>
                 <img className="relative h-10 cursor-pointer" src={cartImg} onClick={()=>setIsOpen(true)}/>
             {cart.length > 0 ? <span className="absolute right-12 bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
