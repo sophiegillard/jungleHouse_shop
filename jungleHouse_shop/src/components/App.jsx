@@ -3,17 +3,21 @@ import {Cart} from "./Cart/Cart.jsx";
 import {ShoppingList} from "./Shop/ShoppingList.jsx";
 import {Category} from "./Shop/Category.jsx";
 import {Footer} from "./Footer/Footer.jsx"
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 function App() {
-    const [cart, updateCart] = useState([]);
+    const initialCart = JSON.parse(window.localStorage.getItem('cart'))
+    const [cart, updateCart] = useState(initialCart);
+
+    useEffect(() => {
+        window.localStorage.setItem('cart', JSON.stringify(cart))
+        },[cart]
+    )
 
     return <div className="relative z-0">
-            <BannerCart cart={cart} updateCart={updateCart}/>
-
+            <Cart cart={cart} updateCart={updateCart} />
         <main>
-            <Category/>
-            <ShoppingList/>
+            <ShoppingList cart={cart} updateCart={updateCart}/>
             <Footer />
         </main>
     </div>

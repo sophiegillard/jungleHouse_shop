@@ -10,7 +10,8 @@ module.exports = {
         'green-logo': '#31b472',
         'green-logo-light': '#73d097',
         'green-logo-very-light': '#c5d7cb',
-        'blue-drop':'#0073d9'
+        'blue-drop':'#0073d9',
+        'blue-drop-light':'rgba(186,208,232,0.77)'
       },
       backgroundImage: {
         'button-return': "url('./src/assets/images/plant.jpg')",
