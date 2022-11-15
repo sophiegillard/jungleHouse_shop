@@ -7,7 +7,7 @@ import {Category} from "./Category.jsx";
 export const ShoppingList = ({cart, updateCart}) => {
     const [activeCategory, setCategory] = useState('');
 
-    //Get each categories to create a select in Category.jsx
+    //Get each categories to create a select in CategoryHome.jsx
     const categories = plantList.reduce((acc, plant)=>
             acc.includes(plant.category)? acc : acc.concat(plant.category),
         []
@@ -52,6 +52,7 @@ export const ShoppingList = ({cart, updateCart}) => {
                 hover:text-white px-4 rounded-lg h-10 mt-4 md:mt-8"
                 >Ajouter
                 </button>
+
 
             </div>
             ) : null

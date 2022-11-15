@@ -1,13 +1,12 @@
-import close from '../../assets/images/previous.png';
-import {useState, useEffect} from "react";
-import logo from "../../assets/images/logo.png";
+import close from "../../assets/images/previous.png";
+import deleteIcon from "../../assets/images/delete.png";
 import attention from "../../assets/images/attention.png";
-import cartImg from '../../assets/images/shopping-cart.png';
-import deleteIcon from '../../assets/images/delete.png';
-import {Link} from "react-router-dom";
+import {useState} from "react";
+import cartImg from "../../assets/images/shopping-cart.png";
 
-export const Cart = ({cart, updateCart}) => {
-    const [isOpen, setIsOpen] = useState(false);
+export const ShoppingCart = ({cart, updateCart}) =>{
+
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
     const total = cart.reduce(
         (acc, plant)=> acc + plant.amount * plant.price, 0);
@@ -41,26 +40,18 @@ export const Cart = ({cart, updateCart}) => {
     }
 
 
-    return isOpen? (<div className="fixed top-0 left-0 right-0 z-20">
-            <div className=" top-0 left-0 right-0 z-20  flex flex-row bg-green-logo-very-light justify-between p-6 md:p-7">
-                <div className="flex flex-row md:gap-5">
-                    <Link className="flex flex-row md:gap-5" to={"/"}>
-                    <img src={logo} alt="logo" className="h-10"/>
-                    <h1 className="text-2xl font-bold">Jungle House</h1>
-                    </Link>
-                </div>
-                <img className="relative h-10 cursor-pointer" src={cartImg} onClick={()=>setIsOpen(false)}/>
-                {cart.length > 0 ? <span className="absolute right-12 bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
+    return isCartOpen ?(
+        <>
+            <div>
+                <img alt ="Shopping Cart" className="relative h-8 sm:h-12 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(false)}/>
+                {cart.length > 0 ? <span className="absolute bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
             </div>
-
-
-
-            <div className="shadow-lg shadow-gray-300 bg-white w-screen md:w-1/2 lg:w-1/3 h-[95vh] right-0 absolute
+            <div className="top-24 shadow-lg shadow-gray-300 bg-white w-screen md:w-1/2 lg:w-1/3 h-[95vh] right-0 absolute
             flex flex-col
             overflow-y-auto">
 
                 <div className="bg-button-return bg-cover h-16 flex p-7 flex-none">
-                    <button onClick={()=>setIsOpen(false)} className='flex gap-2 self-center'>
+                    <button onClick={()=>setIsCartOpen(false)} className='flex gap-2 self-center'>
                         <img src={close} alt="close button" className="h-8"/>
                         <p className="text-white text-xl font-bold">Continuer mes achats</p>
                     </button>
@@ -105,7 +96,7 @@ export const Cart = ({cart, updateCart}) => {
                                             </div>
                                             {/*BUTTON AJOUT */}
 
-                                            <span className="font-bold text-xl self-center">{price.toFixed(2)} €</span>
+                                            <span className="font-bold text-xl self-center">{price} €</span>
                                             <button onClick={()=>{
                                                 let cartList = cart;
                                                 console.log(cart)
@@ -118,18 +109,18 @@ export const Cart = ({cart, updateCart}) => {
                                 ))}
                             </ul>
                             <div className=" my-2 ">
-                                    <div className="flex flex-rox justify-between p-4">
-                                        <p>Produits ({cart.length})</p>
-                                        <p>{((total/121)*100).toFixed(2)} €</p>
-                                    </div>
-                                    <div className="flex flex-rox justify-between p-4">
-                                        <p>TVA</p>
-                                        <p>{((total/121)*21).toFixed(2)} €</p>
-                                    </div>
-                                    <div className="flex flex-rox justify-between p-4 border-t-2 text-2xl font-bold">
-                                        <p>Total à payer</p>
-                                        <p>{total.toFixed(2)} €</p>
-                                    </div>
+                                <div className="flex flex-rox justify-between p-4">
+                                    <p>Produits ({cart.length})</p>
+                                    <p>{((total/121)*100)} €</p>
+                                </div>
+                                <div className="flex flex-rox justify-between p-4">
+                                    <p>TVA</p>
+                                    <p>{((total/121)*21)} €</p>
+                                </div>
+                                <div className="flex flex-rox justify-between p-4 border-t-2 text-2xl font-bold">
+                                    <p>Total à payer</p>
+                                    <p>{total} €</p>
+                                </div>
                             </div>
                         </div>
                     ) : (
@@ -148,27 +139,17 @@ export const Cart = ({cart, updateCart}) => {
                     </button>
 
                     <button
-                            onClick={()=>updateCart([])}
-                            className="empty cart  text-sm  py-2.5  mb-2">
-                            Vider le panier
+                        onClick={()=>updateCart([])}
+                        className="empty cart  text-sm  py-2.5  mb-2">
+                        Vider le panier
                     </button>
                 </div>
 
             </div>
-
-        </div>)
-
-        :
-
-        (<div className="fixed top-0 left-0 right-0 z-20  flex flex-row bg-green-logo-very-light justify-between p-6 md:p-7">
-                <div className="flex flex-row md:gap-5">
-                    <Link className="flex flex-row md:gap-5" to={"/"}>
-                        <img src={logo} alt="logo" className="h-10"/>
-                        <h1 className="text-2xl font-bold">Jungle House</h1>
-                    </Link>
-                </div>
-                <img className="relative h-10 cursor-pointer" src={cartImg} onClick={()=>setIsOpen(true)}/>
-            {cart.length > 0 ? <span className="absolute right-12 bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
-            </div>
-        )
+        </>
+    ):  (<div >
+                <img alt ="Shopping Cart" className="relative h-8 sm:h-12 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(true)}/>
+                {cart.length > 0 ? <span className="absolute  bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
+        </div>
+    )
 }
