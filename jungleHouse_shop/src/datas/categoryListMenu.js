@@ -3,7 +3,7 @@ export const categoryListMenu =[
         id: 'catHome',
         category: 'Accueil',
         link: '/',
-        image: './src/assets/images/home.jpg'
+        image: './src/assets/images/accueil.jpg'
     },
     {
         id: 'cat1',
