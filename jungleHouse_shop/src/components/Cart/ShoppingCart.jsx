@@ -43,10 +43,10 @@ export const ShoppingCart = ({cart, updateCart}) =>{
     return isCartOpen ?(
         <>
             <div>
-                <img alt ="Shopping Cart" className="relative h-8 sm:h-12 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(false)}/>
+                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(false)}/>
                 {cart.length > 0 ? <span className="absolute bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
             </div>
-            <div className="top-24 shadow-lg shadow-gray-300 bg-white w-screen md:w-1/2 lg:w-1/3 h-[95vh] right-0 absolute
+            <div className="top-20 shadow-lg shadow-gray-300 bg-white w-screen md:w-1/2 lg:w-1/3 h-[95vh] right-0 absolute
             flex flex-col
             overflow-y-auto">
 
@@ -148,8 +148,8 @@ export const ShoppingCart = ({cart, updateCart}) =>{
             </div>
         </>
     ):  (<div >
-                <img alt ="Shopping Cart" className="relative h-8 sm:h-12 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(true)}/>
-                {cart.length > 0 ? <span className="absolute  bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
+                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(true)}/>
+                {cart.length > 0 ? <span className="absolute shadow-sm shadow-black bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
         </div>
     )
 }

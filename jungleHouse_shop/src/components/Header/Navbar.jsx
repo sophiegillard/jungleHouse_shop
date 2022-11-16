@@ -9,9 +9,9 @@ export const NavBar = ({cart, updateCart}) =>{
 
     return(
         <>
-            <nav className="bg-green-logo-very-light border-gray-200 py-6
+            <nav className="bg-green-logo-light border-gray-200 py-6
                         sticky top-0 left-0 right-0 z-20">
-                <div className="container flex flex-wrap justify-between items-center mx-auto w-[90%]">
+                <div className="flex flex-wrap justify-between items-center mx-auto w-[90%]">
                     {/* Logo Title*/}
                     <Link to="/" className="flex items-center">
                         <img src={logo} className="mr-1 h-6 sm:h-9"

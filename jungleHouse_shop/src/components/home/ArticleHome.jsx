@@ -16,15 +16,17 @@ export const ArticleHome = () =>{
     ];
 
 
-    return (<>
+    return (<div className="w-[90%] flex flex-col justify-between md:flex-row flex-wrap">
             {articleList.map(({id, title, image})=>
-                <div className="group w-[90%] flex flex-col gap-2 mt-6 items-center cursor-pointer" key={id}>
+                <div className="group flex mt-6 cursor-pointer justify-center
+                md:first:w-[100%] md:w-[48%] 2xl:w-[49%]" key={id}>
                     <img src={image} alt={title}
-                         className="max-h-[20%] h-44 w-[100%] object-cover rounded-lg z-100 "/>
-                    <div className="bg-white-shade-dark h-44 w-[90%] absolute rounded-lg opacity-0 " ></div>
-                    <p className="text-center text-xl font-bold w-[90%] h-[6%] py-1  absolute justify-center bg-white-shade transition-transform duration-700 ease-in-out  group-hover:translate-y-16 group-hover:bg-white-shade-dark group-hover:text-[21px]">{title}</p>
+                         className="max-h-[20%] md:max-h-full h-44 sm:h-60 w-[100%] object-cover rounded-lg z-100
+                         lg:h-72 2xl:h-96"/>
+                    <p className="text-center text-xl font-bold py-1 px-6 mx-auto my-0 absolute justify-center bg-white-shade transition-transform duration-700 ease-in-out  group-hover:translate-y-16 sm:group-hover:translate-y-24 group-hover:bg-white-shade-dark group-hover:text-[21px]
+                    ">{title}</p>
                 </div>
             )}
-        </>
+        </div>
     )
 }

@@ -5,7 +5,35 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'xxs':'376px',
+      'xs': '320px',
+      's': '540px',
+      'sm' : '640px',
+      'md' : '768px',
+      'lg': '1024px',
+      '2xl': '1536px'
+    },
     extend: {
+      animation: {
+        openmenu:  'openmenu 1s ease-in',
+        closemenu:  'closemenu 1s ease-in',
+      },
+      keyframes: {
+        openmenu: {
+          // initial position
+          '0%': {left:  '499px'},
+          // final position
+          '100%': {left:  '0px'}
+        },
+        closemenu: {
+          // initial position
+          '0%': {left:  '0px'},
+          // final position
+          '100%': {left:  '499px',
+          opacity:0}
+        },
+      },
       colors: {
         'green-logo': '#389401',
         'green-logo-light': '#95b483',

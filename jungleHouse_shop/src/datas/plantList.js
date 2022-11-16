@@ -1,4 +1,3 @@
-import photo from "../assets/images/monstera.jpeg"
 
 export const plantList = [
     {
