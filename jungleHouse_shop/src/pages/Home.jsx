@@ -6,10 +6,10 @@ function Home() {
 
     return <main className="">
        <section className="hero box-border h-[44vh] lg:h-[38vh]
-       md:h-[40vh]">
-           <div className="flex items-end bg-green-logo-very-light h-[30%] w-full rounded-br-[100px] top-48 md:top-40 absolute z-100 xs:justify-center
+       md:h-[38vh]">
+           <div className="flex items-end bg-green-logo-very-light h-[30%] w-full rounded-br-[100px] top-[10.5rem] md:top-32 max-xxs:top-[8rem] absolute z-100 xs:justify-center
             max-xxs:top-36">
-               <div className="text-gray-600 mb-6 md:mb-[3rem] flex md:z-10 ">
+               <div className="text-gray-600 mb-6 md:mb-[2.5rem] flex md:z-10 ">
                        <div className="flex rounded-md overflow-hidden w-[80vw] md:w-[60vw] px-2">
                            <input placeholder="Mot clé..." type="text" className="w-full rounded-full rounded-r-none px-4 outline-none focus-visible:outline-gray-200"/>
                            <button
@@ -27,10 +27,10 @@ function Home() {
            </div>
        </section>
 
-        <section className="shopping box-border flex flex-col items-center md:h-[45vh] pt-4 md:pt-4">
+        <section className="shopping box-border flex flex-col items-center md:h-[55vh] pt-4 md:pt-4">
             <h3 className="font-bold text-2xl mb-12  max-xxs:mb-4">Votre shopping en ligne</h3>
 
-            <div className="container max-w-[90%] flex flex-row flex-wrap justify-around">
+            <div className="container max-w-[90%] h-[80%] flex flex-row flex-wrap justify-around">
                 <CategoryHome />
             </div>
         </section>

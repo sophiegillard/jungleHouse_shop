@@ -37,7 +37,8 @@ export const MenuMobile = () =>{
                  md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white md:w-full">
 
                     {categoryListMenu.map(({id, category, link, image}) =>
-                        <Link to={link} className="group card flex flex-row items-center gap-6 h-[70%]" key={id + category}>
+                        <Link to={link} className="group card flex flex-row items-center gap-6 h-[70%]" key={id + category}
+                        onClick={()=>setIsMenuOpen(!isMenuOpen)}>
                             <div className=" overflow-hidden rounded-full max-h-[60%] h-[60%] min-w-[40%] w-[40%]
                             sm:h-[80%] sm:max-h-[70%] sm:min-w-[30%] sm:w-[30%]
                             sm:h-[80%] sm:max-h-[70%] md:min-w-[40%] md:w-[40%]">
