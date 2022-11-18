@@ -4,7 +4,7 @@ import {useMemo} from "react";
 export const Category = ({categories, activeCategory, setCategory}) =>{
 
 
-    return (<div className="p-7 pt-24 flex justify-center">
+    return (<div className="p-2 flex justify-center">
 
         <label className="sr-only" htmlFor="plant-category">Choississez une catégorie:</label>
 

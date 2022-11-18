@@ -12,46 +12,45 @@ export const ShoppingCart = ({cart, updateCart}) =>{
         (acc, plant)=> acc + plant.amount * plant.price, 0);
 
 
-    const handleDecrement = (id, image, name, price) =>{
-        const isThisPlant = cart.find(plant => plant.id === id);
-        if (isThisPlant){
-            const cartFilteredCurrentPlant = cart.filter(
-                (plant) => plant.name !== name
-            )
-            updateCart([
-                ...cartFilteredCurrentPlant,
-                { id, image, name, price, amount : isThisPlant.amount - 1}
-            ])
-        }
+    const handleIncrement = (id, image, name, price) =>{
+        const newList = cart.map(item =>{
+            if(item.id === id){
+               return {id, image, name, price, amount : item.amount + 1}
+            }else{
+                return item
+            }
+        });
+
+        updateCart(newList)
     }
 
 
-    const handleIncrement = (id, image, name, price) =>{
-        const isThisPlant = cart.find(plant => plant.id === id);
-        if (isThisPlant){
-            const cartFilteredCurrentPlant = cart.filter(
-                (plant) => plant.name !== name
-            )
-            updateCart([
-                ...cartFilteredCurrentPlant,
-                { id, image, name, price, amount : isThisPlant.amount + 1}
-            ])
-        }
+    const handleDecrement = (id, image, name, price) =>{
+        const newList = cart.map(item =>{
+            if(item.id === id){
+                return {id,image, name, price, amount : item.amount -1}
+            }else{
+                return item;
+            }
+        })
+
+        const isQuantityNull = newList.filter(item => item.amount !== 0)
+        isQuantityNull !== newList ? updateCart(isQuantityNull) : updateCart(newList);
     }
 
 
     return <>
         {isCartOpen ?
         <>
-            <div>
-                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(false)}/>
-                {cart.length > 0 ? <span className="absolute bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
+            <div className="cursor-pointer lg:mr-6" onClick={()=>setIsCartOpen(false)}>
+                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg}/>
+                {cart.length > 0 ? <span className="absolute shadow-sm bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
             </div>
         </>
     :
         <>
-            <div>
-                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg} onClick={()=>setIsCartOpen(true)}/>
+            <div className="cursor-pointer lg:mr-6" onClick={()=>setIsCartOpen(true)}>
+                <img alt ="Shopping Cart" className="relative h-8 cursor-pointer" src={cartImg}/>
                 {cart.length > 0 ? <span className="absolute shadow-sm shadow-black bottom-5 bg-green-logo-light h-5 w-5 rounded-full flex flex-row justify-center">{cart.length}</span> : null}
             </div>
         </>}
@@ -78,8 +77,8 @@ export const ShoppingCart = ({cart, updateCart}) =>{
                 {cart.length > 0 ? (
                     <div className="">
                         <ul className="h-[550px] overflow-scroll my-4 bg-gray-100">
-                            {cart.map(({id, image, name, price, amount }, index) => (
-                                <div key={`${name}-${index}`} className="border-b-2 p-4">
+                            {cart.map(({id, image, name, price, amount }) => (
+                                <div key={`${id}`} className="border-b-2 p-4">
 
                                     <h4 className="font-bold text-center capitalize text-2xl mb-4">{name}</h4>
 
@@ -91,17 +90,17 @@ export const ShoppingCart = ({cart, updateCart}) =>{
                                             <div className="h-10 w-28 ">
                                                 <div className="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                                                     <button data-action="decrement"
+                                                            onClick={() => handleDecrement(id, image, name, price)}
                                                             className=" bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                                         <span className="m-auto text-2xl font-thin"
-                                                              onClick={() => handleDecrement(id, image, name, price)}
                                                         >−</span>
                                                     </button>
                                                     <span className="justify-center w-full bg-gray-300 font-semibold focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
                                                     >{amount}</span>
                                                     <button data-action="increment"
+                                                            onClick={() => handleIncrement(id, image, name, price)}
                                                             className="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                                         <span className="m-auto text-2xl font-thin"
-                                                              onClick={() =>handleIncrement(id, image, name, price)}
                                                         >+</span>
                                                     </button>
                                                 </div>
@@ -113,7 +112,6 @@ export const ShoppingCart = ({cart, updateCart}) =>{
                                             <span className="font-bold text-xl self-center">{price.toFixed(2)} €</span>
                                             <button onClick={()=>{
                                                 let cartList = cart;
-                                                console.log(cart)
                                                 updateCart(cartList.filter(a => a.id !== id));
                                             }}>
                                                 <img className="h-8" src={deleteIcon}/>

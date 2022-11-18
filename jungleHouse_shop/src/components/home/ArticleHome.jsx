@@ -3,7 +3,7 @@ export const ArticleHome = () =>{
         {
             id: 'art1',
             title: 'Les tendances de Noël 2022',
-            image: './src/assets/images/noelArticle.png'
+            image: './src/assets/images/noel_coeur.jpg'
         },
         {
             id: 'art2',
@@ -24,7 +24,7 @@ export const ArticleHome = () =>{
                          className="max-h-[20%] md:max-h-full h-44 sm:h-60 w-[100%] object-cover rounded-lg z-100
                          lg:h-72 2xl:h-96"/>
                     <p className="text-center text-xl font-bold py-1 px-6 mx-auto my-0 absolute justify-center bg-white-shade transition-transform duration-700 ease-in-out  group-hover:translate-y-16 sm:group-hover:translate-y-24 group-hover:bg-white-shade-dark group-hover:text-[21px]
-                    ">{title}</p>
+                   ">{title}</p>
                 </div>
             )}
         </div>

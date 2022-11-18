@@ -2,8 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import Plantes from "../pages/Plantes.jsx";
 import Home from "../pages/Home.jsx";
 import {useEffect, useState} from "react";
-import {NavBar} from "./Header/Navbar";
+import {NavBar} from "./NavBar/Navbar";
 import {Footer} from "./Footer/Footer.jsx";
+import {PlanteItem} from "../pages/PlanteItem.jsx";
+import {NotFound} from "../pages/NotFound.jsx";
+import {categoryListMenu} from "../datas/categoryListMenu.js";
 
 function App() {
     const initialCart = JSON.parse(window.localStorage.getItem('cart'))
@@ -18,8 +21,17 @@ function App() {
     <>
         <NavBar cart={cart} updateCart={updateCart}/>
     <Routes>
-        <Route path="/" element={<Home />}/>
-        <Route path="/Plantes" element={<Plantes cart={cart} updateCart={updateCart} />} />
+        <Route path="/" element={<Home />} />
+        {/*<Route path="/Noel" element={<Noel />} />*/}
+        <Route path="/Plantes">
+            <Route index element={<Plantes cart={cart} updateCart={updateCart}/>}/>
+            <Route path=":id" element={<PlanteItem cart={cart} updateCart={updateCart} />} />
+        </Route>
+
+        {/*<Route path="/Jardin" element={<Jardin />} />*/}
+        {/*<Route path="/Meubles" element={<Meubles />} />*/}
+        <Route path="*" element={<NotFound />} />
+
     </Routes>
         <Footer />
     </>

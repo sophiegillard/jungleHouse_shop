@@ -11,7 +11,7 @@ export const MenuMobile = () =>{
                 //If menu is closed
                 <>
                     <button type="button" onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="buttonMenu px-2 lg:hidden"
+                            className="buttonMenu px-2 sm:mr-6 sm:ml-2 lg:hidden"
                             aria-controls="navbar-default" aria-expanded="false">
                         <img alt="Shopping Cart" className="relative h-8 cursor-pointer" src={menu}/>
                     </button>
@@ -20,7 +20,7 @@ export const MenuMobile = () =>{
                 //if menu is open
                 (<>
                 <button type="button" onClick={()=>setIsMenuOpen(!isMenuOpen)}
-                className="buttonMenu px-2 lg:hidden"
+                className="buttonMenu px-2 sm:mr-6 sm:ml-2 lg:hidden"
                 aria-controls="navbar-default" aria-expanded="false">
                 <img alt ="Shopping Cart" className="relative h-8 cursor-pointer z-20" src={menu}/>
                 </button>
