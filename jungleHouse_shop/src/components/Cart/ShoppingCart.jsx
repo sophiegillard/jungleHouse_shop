@@ -76,7 +76,7 @@ export const ShoppingCart = ({cart, updateCart}) =>{
 
                 {cart.length > 0 ? (
                     <div className="">
-                        <ul className="h-[550px] overflow-scroll my-4 bg-gray-100">
+                        <ul className="h-[40vh] overflow-scroll my-4 bg-gray-100">
                             {cart.map(({id, image, name, price, amount }) => (
                                 <div key={`${id}`} className="border-b-2 p-4">
 

@@ -11,8 +11,7 @@ export const NavBar = ({cart, updateCart}) =>{
     return(
         <>
             <nav className="bg-green-logo-light border-gray-200
-                        sticky top-0 left-0 right-0 z-30 h-16 pt-2 flex items-center
-                        ">
+                        sticky top-0 left-0 right-0 z-30 h-16 pt-2 flex items-center">
                 <div className="flex flex-wrap justify-between items-center mx-auto w-full h-[90%]">
                     {/* Logo Title*/}
                     <Link to="/" className="flex items-center ml-1 sm:ml-6 z-30">

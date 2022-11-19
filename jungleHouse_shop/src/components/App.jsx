@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Plantes from "../pages/Plantes.jsx";
 import Home from "../pages/Home.jsx";
+import {Noel} from "../pages/Noel.jsx";
+import {Jardin} from "../pages/Jardin.jsx";
+import {Meubles} from "../pages/Meubles.jsx";
 import {useEffect, useState} from "react";
 import {NavBar} from "./NavBar/Navbar";
 import {Footer} from "./Footer/Footer.jsx";
@@ -20,19 +23,25 @@ function App() {
     return (
     <>
         <NavBar cart={cart} updateCart={updateCart}/>
-    <Routes>
-        <Route path="/" element={<Home />} />
-        {/*<Route path="/Noel" element={<Noel />} />*/}
-        <Route path="/Plantes">
-            <Route index element={<Plantes cart={cart} updateCart={updateCart}/>}/>
-            <Route path=":id" element={<PlanteItem cart={cart} updateCart={updateCart} />} />
-        </Route>
 
-        {/*<Route path="/Jardin" element={<Jardin />} />*/}
-        {/*<Route path="/Meubles" element={<Meubles />} />*/}
-        <Route path="*" element={<NotFound />} />
+        <Routes>
+            <Route path="/" element={<Home />} />
 
-    </Routes>
+            <Route path="/Noel" element={<Noel />} />
+
+            <Route path="/Plantes">
+                <Route index element={<Plantes cart={cart} updateCart={updateCart}/>}/>
+                <Route path=":id" element={<PlanteItem cart={cart} updateCart={updateCart} />} />
+            </Route>
+
+            <Route path="/Jardin" element={<Jardin />} />
+
+            <Route path="/Meubles" element={<Meubles />} />
+
+            <Route path="*" element={<NotFound />} />
+
+        </Routes>
+
         <Footer />
     </>
 )}
