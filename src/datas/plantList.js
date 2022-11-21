@@ -57,7 +57,7 @@ export const plantList = [
         isSpecialOffer: false,
         water:1,
         light:2,
-        image : '../assets/images/olivier.jpeg',
+        image : '../../assets/images/olivier.jpeg',
         description: ''
     },
     {
@@ -73,7 +73,7 @@ export const plantList = [
         description: ''
     },
     {
-        name: 'basilique',
+        name: 'Basilique',
         category: 'extérieur',
         id: '7ie',
         isBestSale: false,
@@ -81,7 +81,7 @@ export const plantList = [
         isSpecialOffer: true,
         water:2,
         light:2,
-        image : '/src/assets/images/basil.jpeg',
+        image : '../../assets/images/basil.jpeg',
         description: ''
     },
     {
