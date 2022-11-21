@@ -20,13 +20,13 @@ I learned react on my own during a 7-month Bootcamp.
 
 /!\ Fot the moment only the plant section is complete. 
 
-### What's to improve?
+## What's to improve?
 Reponsive design need to be improve at some points. 
 The other sections need to be finished.
 
 The backend still need to be done.
 
-### Overview of the project 
+## Overview of the project 
 ![Overview1](public/assets/images/overview1.png)
 ![Overview2](public/assets/images/overview2.png)
 ![Overview3](public/assets/images/overview3.png)
