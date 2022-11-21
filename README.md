@@ -9,7 +9,7 @@
 
 # Jungle Shop
 ## Link to the actual site
-[Jungle Shop](https://sophiegillard.github.io/jungleHouse_shop/
+[Jungle Shop](https://junglehouse-project.netlify.app/)
 
 ## Description
 It's a Online shop that sells plants, garden garnitures, Christmas ornements and gardening accessories & tools.
