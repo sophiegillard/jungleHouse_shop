@@ -1,2 +1,0 @@
-# jungleHouse_shop
-react
