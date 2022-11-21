@@ -7,12 +7,12 @@
 ![React](https://img.shields.io/badge/-React-blue)
 ![ReactRouter](https://img.shields.io/badge/-ReactRouter-green)
 
-# Jungle Shop
+# Jungle House
 ## Link to the actual site
-[Jungle Shop](https://junglehouse-project.netlify.app/)
+[Jungle house](https://junglehouse-project.netlify.app/)
 
 ## Description
-It's a Online shop that sells plants, garden garnitures, Christmas ornements and gardening accessories & tools.
+It's a Online shop that sells plants, garden garnitures, Christmas ornaments and gardening accessories & tools.
 It's possible to add items to the cart, modify the cart and empty the cart.
 
 The project was realized to learn React and practice Tailwind. This is my first React project.
