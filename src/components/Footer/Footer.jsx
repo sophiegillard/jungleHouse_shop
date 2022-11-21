@@ -1,6 +1,6 @@
 import {useState} from "react";
-import mail from'../../assets/images/mail.png';
-import logo from "../../assets/images/logo.png";
+import mail from '../../../public/assets/images/mail.png';
+import logo from "../../../public/assets/images/logo.png";
 
 export const Footer = () =>{
 

@@ -1,5 +1,5 @@
 import {useState} from "react";
-import menu from "../../assets/images/menu.png";
+import menu from "../../../public/assets/images/menu.png";
 import {Link} from "react-router-dom";
 import {categoryListMenu} from "../../datas/categoryListMenu.js";
 

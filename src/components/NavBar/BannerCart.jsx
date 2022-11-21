@@ -1,6 +1,6 @@
-import close from '../../assets/images/previous.png';
-import logo from '../../assets/images/logo.png';
-import cart from '../../assets/images/cart.png';
+import close from '../../../public/assets/images/previous.png';
+import logo from '../../../public/assets/images/logo.png';
+import cart from '../../../public/assets/images/cart.png';
 import {useState} from "react";
 
 

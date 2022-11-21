@@ -1,8 +1,8 @@
-import close from "../../assets/images/previous.png";
-import deleteIcon from "../../assets/images/delete.png";
-import attention from "../../assets/images/attention.png";
+import close from "../../../public/assets/images/previous.png";
+import deleteIcon from "../../../public/assets/images/delete.png";
+import attention from "../../../public/assets/images/attention.png";
 import {useState} from "react";
-import cartImg from "../../assets/images/shopping-cart.png";
+import cartImg from "../../../public/assets/images/shopping-cart.png";
 
 export const ShoppingCart = ({cart, updateCart}) =>{
 

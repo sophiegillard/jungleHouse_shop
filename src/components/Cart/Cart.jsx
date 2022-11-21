@@ -1,9 +1,9 @@
-import close from '../../assets/images/previous.png';
+import close from '../../../public/assets/images/previous.png';
 import {useState, useEffect} from "react";
-import logo from "../../assets/images/logo.png";
-import attention from "../../assets/images/attention.png";
-import cartImg from '../../assets/images/shopping-cart.png';
-import deleteIcon from '../../assets/images/delete.png';
+import logo from "../../../public/assets/images/logo.png";
+import attention from "../../../public/assets/images/attention.png";
+import cartImg from '../../../public/assets/images/shopping-cart.png';
+import deleteIcon from '../../../public/assets/images/delete.png';
 import {Link} from "react-router-dom";
 
 export const Cart = ({cart, updateCart}) => {

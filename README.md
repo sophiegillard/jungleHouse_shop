@@ -27,9 +27,9 @@ The other sections need to be finished.
 The backend still need to be done.
 
 ### Overview of the project 
-![Overview1](./src/assets/images/overview1.png)
-![Overview2](./src/assets/images/overview2.png)
-![Overview3](./src/assets/images/overview3.png)
+![Overview1](public/assets/images/overview1.png)
+![Overview2](public/assets/images/overview2.png)
+![Overview3](public/assets/images/overview3.png)
 
 
 

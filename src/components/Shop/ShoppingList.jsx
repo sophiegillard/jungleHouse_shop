@@ -1,6 +1,6 @@
 import {plantList} from "../../datas/plantList.js";
 import {PlantItem} from "./PlantItem.jsx";
-import plant from '../../assets/images/basil.jpeg';
+import plant from '../../../public/assets/images/basil.jpeg';
 import {useState} from "react";
 import {Category} from "./Category.jsx";
 import {Link} from "react-router-dom";

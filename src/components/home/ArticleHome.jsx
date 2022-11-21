@@ -3,16 +3,16 @@ export const ArticleHome = () =>{
         {
             id: 'art1',
             title: 'Les tendances de Noël 2022',
-            image: './src/assets/images/noel_coeur.jpg'
+            image: '/assets/images/noel_coeur.jpg'
         },
         {
             id: 'art2',
             title: 'Nourrir les oiseaux en hiver',
-            image: './src/assets/images/birdArticle.jpg'},
+            image: '/assets/images/birdArticle.jpg'},
         {
             id: 'art3',
             title: 'Proteger vos plantes du froid',
-            image: './src/assets/images/treeArticle.jpg'},
+            image: '/assets/images/treeArticle.jpg'},
     ];
 
 

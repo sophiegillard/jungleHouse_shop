@@ -1,4 +1,4 @@
-import christmasTree from '../assets/images/christmas-tree.jpg';
+import christmasTree from '../../public/assets/images/christmas-tree.jpg';
 import {CategoryHome} from "../components/home/CategoryHome.jsx";
 import {ArticleHome} from "../components/home/ArticleHome.jsx";
 

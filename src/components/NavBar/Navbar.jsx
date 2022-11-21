@@ -1,4 +1,4 @@
-import logo from "../../assets/images/logo.png";
+import logo from "../../../public/assets/images/logo.png";
 import {useState} from "react";
 import {ShoppingCart} from "../Cart/ShoppingCart";
 import {MenuMobile} from "./MenuMobile.jsx";
