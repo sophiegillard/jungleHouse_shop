@@ -48,8 +48,8 @@ module.exports = {
         'white-shade-dark':'rgba(255,255,255,0.76)'
       },
       backgroundImage: {
-        'button-return': "url('../src/assets/images/plant.jpg')",
-        'footer-image': "url('../src/assets/images/bookPlantes3.jpg')",
+        'button-return': "url('/src/assets/images/plant.jpg')",
+        'footer-image': "url('/src/assets/images/bookPlantes3.jpg')",
       },
       fontFamily: {
         'main': 'Dosis'

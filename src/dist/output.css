@@ -1188,11 +1188,11 @@ html {
 }
 
 .bg-button-return{
-  background-image: url('../src/assets/images/plant.jpg');
+  background-image: url('/src/assets/images/plant.jpg');
 }
 
 .bg-footer-image{
-  background-image: url('../src/assets/images/bookPlantes3.jpg');
+  background-image: url('/src/assets/images/bookPlantes3.jpg');
 }
 
 .bg-cover{
