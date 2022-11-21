@@ -3,7 +3,7 @@ import {showDetails} from "./Scales.js";
 
 export const CareScale = ({name, scaleValue, careType}) =>{
     const ranges = [1,2,3,4];
-    const scaleType = careType === 'light' ? '../src/assets/images/sun(1).png' : '../src/assets/images/droplet(1).png'
+    const scaleType = careType === 'light' ? '/assets/images/sun(1).png' : '/assets/images/droplet(1).png'
 
     return(<div className="flex flex-row" onClick={() => showDetails(name, careType, scaleValue)}>
         {
